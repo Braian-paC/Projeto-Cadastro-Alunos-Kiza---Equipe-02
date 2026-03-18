@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Login</title>
+  <title>Recuperar Senha</title>
   <link rel="stylesheet" href="css.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -19,23 +19,18 @@
 
   <!-- Interface -->
   <div class="tela-login">
-    <form action="login.php" method="post">
-      <h1>Login</h1>
-      <p class="subtitle">Coloque os dados da sua conta</p>
+    <form action="recuperar.php" method="post">
+      <h1>Recuperação</h1>
+      <p class="subtitle">Informe sua matrícula para recuperar a senha</p>
 
       <div class="input-group">
-        <input type="text" name="Matricula" placeholder="Matrícula" required />
+        <input type="text" name="Matricula" placeholder="Sua Matrícula" required />
       </div>
 
-      <div class="input-group">
-        <input type="password" name="Senha" placeholder="Senha" required />
-      </div>
-
-      <button type="submit" class="btn-login">Entrar</button>
+      <button type="submit" class="btn-login">Enviar Nova Senha</button>
 
       <div class="links">
-        <a href="recuperar-senha.html" class="forget-password">Esqueceu a senha?</a>
-        <p class="register-text">Ainda não tem uma conta? <a href="cadastro.html" class="btn-register">Matricule-se</a></p>
+        <p class="register-text">Lembrou a senha? <a href="html.html" class="btn-register">Voltar ao Login</a></p>
       </div>
     </form>
   </div>
