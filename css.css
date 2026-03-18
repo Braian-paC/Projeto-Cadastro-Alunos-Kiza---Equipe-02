@@ -11,12 +11,10 @@ body {
     justify-content: center;
     align-items: center;
     background: #0f172a;
-    /* Dark theme background */
     overflow: hidden;
     position: relative;
 }
 
-/* Floating animation for shapes */
 @keyframes float {
     0% {
         transform: translateY(0) scale(1);
@@ -31,7 +29,7 @@ body {
     }
 }
 
-/* Background floating shapes */
+
 .background-shapes {
     position: absolute;
     top: 0;
@@ -78,7 +76,7 @@ body {
     animation-delay: -4s;
 }
 
-/* Glassmorphism Container */
+
 .tela-login {
     position: relative;
     z-index: 1;
