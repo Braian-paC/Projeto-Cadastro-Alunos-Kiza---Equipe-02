@@ -1,23 +1,32 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Codigo - Portal Academico</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
     <header>
-      <strong>Portal Academico</strong>
-      <h1>Codigo de verificacao</h1>
-      <p>Digite o codigo enviado no seu email.</p>
+        <strong>Portal Academico</strong>
+        <h1>Codigo de verificacao</h1>
+        <p>Digite o codigo enviado no seu email.</p>
     </header>
     <main>
-      <form action="nova-senha.html" method="get">
-        <label for="code">Codigo</label>
-        <input id="code" name="code" type="text" required />
-        <button type="submit">Confirmar</button>
-      </form>
-      <p><a href="Index.html">Voltar ao login</a></p>
+        <div class="right">
+            <form action="nova-senha.html" method="get">
+                <p>Codigo</p>
+                <input type="text" name="codigo" pattern="\d{6}" maxlength="6" required
+                    title="Digite exatamente 6 dígitos" />
+                <button type="submit">Confirmar</button>
+                <button type="button" onclick="location.href = 'Index.html'">
+                    Voltar ao login
+                </button>
+            </form>
+        </div>
     </main>
-  </body>
+</body>
+
 </html>

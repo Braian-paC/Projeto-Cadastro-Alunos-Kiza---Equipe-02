@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nova senha - Portal Academico</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header>
@@ -12,12 +13,13 @@
       <p>Crie uma nova senha segura e confirme.</p>
     </header>
     <main>
+        <div  class="right">
       <section>
       <form action="Index.html" method="get">
-        <label for="new-password">Nova senha</label>
+        <p>Nova senha</p>
         <input id="new-password" name="new-password" type="password" required  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$" title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais."/>
 
-        <label for="confirm-password">Confirmar senha</label>
+        <p>Confirmar senha</p>
         <input
           id="confirm-password"
           name="confirm-password"
@@ -27,8 +29,10 @@
         />
         <button type="submit">Salvar e voltar</button>
         </section>
-      </form>
-      <p><a href="Index.html">Voltar ao login</a></p>
-    </main>
+      </form> 
+     <button type="button" onclick="location.href = 'Index.html'">
+            Voltar ao login
+          </button>
+          </div>        
   </body>
 </html>
