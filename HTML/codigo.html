@@ -14,17 +14,30 @@
         <h1>Codigo de verificacao</h1>
         <p>Digite o codigo enviado no seu email.</p>
     </header>
+
     <main>
         <div class="right">
-            <form action="nova-senha.html" method="get">
-                <p>Codigo</p>
-                <input type="text" name="codigo" pattern="\d{6}" maxlength="6" required
-                    title="Digite exatamente 6 dígitos" />
+            <form action="nova-senha.php" method="post">
+
+                <label>Codigo</label>
+                <input 
+                    type="text" 
+                    name="codigo" 
+                    pattern="\d{6}" 
+                    maxlength="6" 
+                    required
+                    inputmode="numeric"
+                    placeholder="000000"
+                />
+
                 <button type="submit">Confirmar</button>
-                <button type="button" onclick="location.href = 'Index.html'">
-                    Voltar ao login
-                </button>
+
             </form>
+
+            <button type="button" onclick="location.href='Index.php'">
+                Voltar ao login
+            </button>
+
         </div>
     </main>
 </body>
