@@ -28,14 +28,16 @@
           name="confirm-senha"
           type="password"
           required
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$" title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais."
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$"
+          title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais."
         />
 
         <label for="telefone">Telefone</label>
         <input id="telefone" name="telefone" type="tel" required />
 
         <label
-          ><input type="checkbox" required /> Eu aceito os termos de uso</label
+          ><input type="checkbox" required /> Eu aceito os
+          <a href="termos.html">termos de uso</a></label
         >
         <button type="submit">Registrar</button>
       </form>
