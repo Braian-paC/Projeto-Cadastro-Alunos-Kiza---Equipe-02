@@ -22,7 +22,7 @@
       <!-- FORMULÁRIO -->
       <div class="left">
         <form action="registro.php" method="post">
-
+        <form method="POST" action="codigo.php">
           <label for="matricula">Matricula</label>
           <input id="matricula" name="matricula" type="text" required />
 
@@ -30,7 +30,13 @@
           <input id="email" name="email" type="email" required />
 
           <label for="senha">Senha</label>
-          <input id="senha" name="senha" type="password" required />
+        <input 
+            id="senha" 
+            name="senha" 
+            type="password" 
+            required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+          />
 
           <label for="confirm-senha">Confirmar senha</label>
           <input
@@ -38,8 +44,7 @@
             name="confirm-senha"
             type="password"
             required
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$"
-          />
+          /> 
 
           <label for="telefone">Telefone</label>
           <input id="telefone" name="telefone" type="tel" required />

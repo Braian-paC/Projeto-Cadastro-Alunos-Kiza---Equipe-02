@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: Index.php");
+    exit();
+}
+?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -23,7 +31,19 @@
     <!-- CONTEÚDO -->
     <main class="content">
       <h1>Portal Academico | Bem-vindo [Nome do aluno]</h1>
+<?php
+$conn = new mysqli("localhost", "root", "", "escola");
 
+$sql = "SELECT * FROM alunos";
+$result = $conn->query($sql);
+
+echo "<h2>Lista de Alunos</h2>";
+
+while ($aluno = $result->fetch_assoc()) {
+    echo $aluno['nome'] . " - " . $aluno['curso'];
+    echo " <a href='editar.php?id=".$aluno['id']."'>Editar</a><br>";
+}
+?>
       <div class="cards">
 
         <div class="card">
@@ -52,4 +72,6 @@
   </div>
 
 </body>
+
 </html>
+
