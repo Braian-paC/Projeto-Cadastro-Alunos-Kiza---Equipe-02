@@ -19,51 +19,42 @@
   <main>
     <div class="main">
 
-      <!-- FORMULÁRIO -->
       <div class="left">
-        <form action="registro.php" method="post">
-        <form method="POST" action="codigo.php">
-          <label for="matricula">Matricula</label>
-          <input id="matricula" name="matricula" type="text" required />
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required />
+        
+        <form method="POST" action="cadastrar.php">
 
-          <label for="senha">Senha</label>
-        <input 
-            id="senha" 
-            name="senha" 
-            type="password" 
-            required
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-          />
+        <label>Nome completo</label>
+        <input name="nome" type="text" required />
 
-          <label for="confirm-senha">Confirmar senha</label>
-          <input
-            id="confirm-senha"
-            name="confirm-senha"
-            type="password"
-            required
-          /> 
+        
+          <label>CPF</label>
+          <input name="cpf" type="text" required />
 
-          <label for="telefone">Telefone</label>
-          <input id="telefone" name="telefone" type="tel" required />
+          <label>Senha</label>
+          <input name="senha" type="password" required />
 
-          <label>
-            <input type="checkbox" required />
-            Eu aceito os <a href="termos.php">termos de uso</a>
-          </label>
+          <label>Confirmar senha</label>
+          <input name="confirm_senha" type="password" required />
+
+          <label>Email</label>
+          <input name="email" type="email" required />
 
           <button type="submit">Registrar</button>
 
+          <label>
+      <input type="checkbox" name="termos" required />
+       Eu aceito os <a href="termos.php">termos de uso</a>
+          </label>
+
         </form>
 
-        <button type="button" onclick="location.href='Index.php'">
+        <button onclick="location.href='Index.php'">
           Voltar ao login
         </button>
+
       </div>
 
-      <!-- IMAGEM -->
       <div class="right">
         <img src="images/image-1-16.png" alt="Ilustração" />
       </div>
