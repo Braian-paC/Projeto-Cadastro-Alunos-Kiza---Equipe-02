@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost", "root", "", "escola");
+// Conexão ao Banco de Dados.
+include("../config/database.php");
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];

@@ -3,7 +3,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-$conn = new mysqli("localhost", "root", "", "escola");
+// Conexão ao Banco de Dados.
+include("../config/database.php");
 
 // Verifica ID
 if (!isset($_GET['id'])) {
