@@ -1,17 +1,8 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "escola");
 
-// Verifica conexão
-if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
-}
-
-// Mensagem de sucesso
-if (isset($_SESSION['mensagem'])) {
-    echo "<p style='color:green;'>" . $_SESSION['mensagem'] . "</p>";
-    unset($_SESSION['mensagem']);
-}
+// Conexão ao Banco de Dados.
+include("../config/database.php");
 
 // 🔽 SÓ MOSTRA SE CLICAR NO 👥
 if (isset($_GET['lista']) && $_GET['lista'] == 'alunos') {
