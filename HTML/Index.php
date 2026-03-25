@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Portal Academico</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <header>
@@ -53,7 +53,7 @@
           <section>
             <h2>Student Portal</h2>
             <p>Organize seus cursos, notas e calendarios em um unico lugar.</p>
-            <img src="images/image-1-16.png" alt="Ilustracao de aluno" />
+            <img src="../assets/images/image-1-16.png" alt="Ilustracao de aluno" />
           </section>
         </div>
 
