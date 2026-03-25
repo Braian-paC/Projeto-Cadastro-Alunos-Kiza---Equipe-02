@@ -1,9 +1,9 @@
 <?php
 
-$hostname = "localhost";
-$bancodedados = "cadastro_alunos";
+$hostname = "crossover.proxy.rlwy.net";
+$bancodedados = "registroAlunos";
 $usuario = "root";
-$senha = "";
+$senha = "lpZdolCpdlLPRFDHpvooJbHkwPSVDRYV";
 
 $mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
 if ($mysqli->connect_errno) {
