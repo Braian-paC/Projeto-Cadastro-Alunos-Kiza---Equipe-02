@@ -16,21 +16,22 @@ const formatCPF = (value) => { // função chamada formatCPF comque recebe um te
 }
 
 // ---> FUNÇÕES DE VALIDAÇÃO 
-const validateCPF = (cpf) => {
-    cpf = cpf.replace(/\D/g, '');
+const validateCPF = (cpf) => { //Funcao que recebe p textp digitado (cpf)
+    cpf = cpf.replace(/\D/g, ''); //Deixa apenas numeros no codigo para garantir que nao havera letras/caracteres diferentes
     
-    if (cpf.length !== 11) {
-        return { valid: false, message: 'O CPF deve conter 11 dígitos.' };
+    if (cpf.length !== 11) { // Verifica se tem EXATAMENTE 11 numeros
+        return { valid: false, message: 'O CPF deve conter 11 dígitos.' }; // Se não tiver 11 numeros, retorna um objeto e solta a mensagem de erro
     }
     
-    if (/^(\d)\1{10}$/.test(cpf)) {
-        return { valid: false, message: 'CPF inválido. Dígitos não podem ser todos iguais.' };
+    if (/^(\d)\1{10}$/.test(cpf)) { // Verifica se todos os numeros sao iguais, ex: 111.111.111-11
+        return { valid: false, message: 'CPF inválido. Dígitos não podem ser todos iguais.' }; //De novo retorna um objt... igual oq esta ai em cima ^
     }
     
-    const calcularDigito = (cpfParcial) => {
-        let soma = 0;
-        const tamanho = cpfParcial.length;
-        
+    const calcularDigito = (cpfParcial) => { //Uma funcao dentro de outra para calcular os dois ultimos digitos do CPF --> Calculo da receita federal para valida um cpf
+        let soma = 0;                     // Variaveis para a conta 
+        const tamanho = cpfParcial.length;//   ^
+                                          //   |
+                                          //   |
         for (let i = 0; i < tamanho; i++) {
             const digito = parseInt(cpfParcial.charAt(i));
             const peso = (tamanho + 1 - i);
