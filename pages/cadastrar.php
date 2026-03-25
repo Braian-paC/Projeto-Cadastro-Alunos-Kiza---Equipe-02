@@ -17,8 +17,8 @@ if ($senha != $confirm_senha) {
 }
 
 // INSERT no banco
-$sql = "INSERT INTO alunos (nome, cpf, email, senha)
-VALUES ('$nome', '$cpf', '$email', '$senha')";
+$sql = "INSERT INTO alunos (nome, cpf, email, senha, confirm_senha)
+VALUES ('$nome', '$cpf', '$email', '$senha', '$senha')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: Index.php");
