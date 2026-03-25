@@ -5,48 +5,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro - Portal Academico</title>
-  <link rel="stylesheet" href="../assets/css/dashboard.css" />
-  <link rel="stylesheet" href="../assets/css/layout.css" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/registro.css" />
 </head>
 
 <body>
-
-  <header>
-    <strong>Portal Academico</strong>
-    <h1>Registre-se</h1>
-    <p>Crie sua conta para acessar o portal.</p>
-  </header>
 
   <main>
     <div class="main">
 
       <div class="left">
-
+        <div>
+          <h1>Registre-se</h1>
+          <p>Crie sua conta para acessar o portal.</p>
+        </div>
         
         <form method="POST" action="cadastrar.php">
 
-        <label>Nome completo</label>
-        <input name="nome" type="text" required />
-
+          <label class="cadastro">
+            <input name="nome" type="text" required placeholder="Nome completo" />
+          </label>
         
-          <label>CPF</label>
-          <input name="cpf" type="text" required />
+          <label class="cadastro">
+            <input name="cpf" type="text" required placeholder="CPF"/>
+          </label>
 
-          <label>Senha</label>
-          <input name="senha" type="password" required />
+          <label class="cadastro">
+            <input name="senha" type="password" required placeholder="Senha" />
+          </label>
 
-          <label>Confirmar senha</label>
-          <input name="confirm_senha" type="password" required />
+          <label class="cadastro">
+            <input name="confirm_senha" type="password" required placeholder="Confirmar senha" />
+          </label>
 
-          <label>Email</label>
-          <input name="email" type="email" required />
+          <label class="cadastro">
+            <input name="email" type="email" required placeholder="Email" />
+          </label>
 
-          <button type="submit">Registrar</button>
+          <button class="registro" type="submit">Registrar</button>
 
-          <label>
-      <input type="checkbox" name="termos" required />
-       Eu aceito os <a href="termos.php">termos de uso</a>
+          <label class="check">
+            <input type="checkbox" name="termos" required />
+            Eu aceito os <a href="termos.php">termos de uso</a>
           </label>
 
         </form>
@@ -56,13 +55,14 @@
         </button>
 
       </div>
-
-      <div class="right">
-        <img src="images/image-1-16.png" alt="Ilustração" />
-      </div>
-
     </div>
   </main>
+ 
+
+  <div class="right">
+    <h1>Portal Acadêmico</h1>
+    <img src="../assets/images/image-1-16.png" alt="Ilustração" />
+  </div>
 
 </body>
 </html>

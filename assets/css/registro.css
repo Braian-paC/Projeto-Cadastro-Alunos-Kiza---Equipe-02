@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #121215;
+    background-image: url('../images/image-33-144.png');
+}
+
+@media (min-width: 1024px) {
+
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-areas: "profile timeline";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 60px;
+        gap: 30px;
+    }
+
+    .left form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    form label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro input {
+        width: 50%;
+        padding: 5px;
+        background: transparent;
+        border: 2px solid #fff;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 12px;
+    }
+
+    .registro {
+        background-color: #4f46e5;
+    }
+
+    .registro:hover {
+        background-color: #4338ca;
+    }
+
+    button {
+        width: 50%;
+        padding: 5px;
+        background: transparent;
+        border: 2px solid #fff;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 12px;
+    }
+
+    button:hover {
+        background-color: #4f46e5;
+        border-color: #4f46e5;
+    }
+
+    .check {
+        display: flex;
+        flex-direction: row;
+        margin-top: 12px;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+    .right {
+        background: #ae9fe4;
+        border-radius: 20px 0px 0px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .right img{
+        width: 90%;
+    }
+}
