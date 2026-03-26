@@ -1,9 +1,8 @@
-// ---> FUNÇÕES DE FORMATAÇÃO | Ainda precisa ser ligada com o Html
-const formatCPF = (value) => { // função chamada formatCPF comque recebe um texto (value) como entrada
-
+// ---> FUNÇÕES DE FORMATAÇÃO 
+const formatCPF = (value) => { 
+    
     value = value.replace(/\D/g, ''); //Procura tudo que não é número e remove, ou seja, o usuário só pode escrever letras mas elas serão cortadas
-    value = value.substring(0, 11); //Assume que o VALUE ja é string e corta ele para ter no maximo 11 caracteres 
-    //=> Mascaras:
+    
     if (value.length > 9) {
         return value.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4'); // Separa em 4 blocos e monta o formato final: xxx.xxx.xxx-XX
     } else if (value.length > 6) {
@@ -28,42 +27,43 @@ const validateCPF = (cpf) => { //Funcao que recebe p textp digitado (cpf)
     }
     
     const calcularDigito = (cpfParcial) => { //Uma funcao dentro de outra para calcular os dois ultimos digitos do CPF --> Calculo da receita federal para valida um cpf
-        let soma = 0;                     // Variaveis para a conta 
-        const tamanho = cpfParcial.length;//   ^
-                                          //   |
-                                          //   |
-        for (let i = 0; i < tamanho; i++) {
-            const digito = parseInt(cpfParcial.charAt(i));
-            const peso = (tamanho + 1 - i);
-            soma += digito * peso;
+        
+        let soma = 0;                      // Variaveis para a conta 
+        const tamanho = cpfParcial.length; //   ^
+                                           //   |
+                                           //   |
+
+        for (let i = 0; i < tamanho; i++) { //Percorre cada numero do cpf
+            const digito = parseInt(cpfParcial.charAt(i)); //Trasnforma o digito em numero real
+            const peso = (tamanho + 1 - i); // Variavel de multiplicadores
+            soma += digito * peso; //Acumulador
         }
         
-        const resto = soma % 11;
-        return resto < 2 ? '0' : (11 - resto).toString();
+        const resto = soma % 11; //Pega o resto da divisao por 11
+        return resto < 2 ? '0' : (11 - resto).toString();  //Logica dos 2 ultimos numeros do cpf 
     }
     
-    const primeiroDigito = calcularDigito(cpf.substring(0, 9));
-    const segundoDigito = calcularDigito(cpf.substring(0, 9) + primeiroDigito);
-    const cpfCorreto = cpf.substring(0, 9) + primeiroDigito + segundoDigito;
+    const primeiroDigito = calcularDigito(cpf.substring(0, 9)); // Roda a conta nos 9 primeiros numero para achar o numero 10
+    const segundoDigito = calcularDigito(cpf.substring(0, 9) + primeiroDigito); // Roda a conta nos 10 primeiros numero para achar o numero 11
+    const cpfCorreto = cpf.substring(0, 9) + primeiroDigito + segundoDigito; //Monta como realmente deveria ser o cpf
     
-    if (cpf !== cpfCorreto) {
+    if (cpf !== cpfCorreto) { //Compara o que o usuario digitol com com o calculoo que eu fiz acima. Se for diferente o cpf é invalido
         return { valid: false, message: 'CPF inválido. Dígitos verificadores incorretos.' };
     }
     
-    return { valid: true, message: 'CPF válido!' };
+    return { valid: true, message: 'CPF válido!' }; //Se passou de tudo o cpf é valido
 }
 
 const validateEmail = (email) => {
-    // Exige domínio com pelo menos 2 letras
-    return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email);
+    return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email); // COnfere se tem @, 1 ponto e pelo menos 2 letras no fim
 };
 
 const validateNome = (nome) => {
-    return nome.trim().length >= 3;
+    return nome.trim().length >= 3; //Remove espaços inuteis e checa se o nome tem pelo menos 3 letras
 };
 
-const validateSenha = (senha) => {
-    return senha.length >= 8;
+const validateSenha = (senha) => { 
+return senha.length >= 8; //Checa se a senha tem pelo menos 8 caracteres
 };
 
 // ---> FUNÇÕES DE FEEDBACK   
@@ -108,11 +108,11 @@ const clearAllStates = () => {
 };
 
 // ---> ELEMENTOS DO DOM 
-const registerForm = document.getElementById('registerForm');
+const registerForm = document.getElementById('registerForm'); // ...
 const inputCPF = document.getElementById('cpf');
 const inputNome = document.getElementById('nome');
 const inputSenha = document.getElementById('senha');
-const inputConfirmSenha = document.getElementById('confirmSenha');
+const inputConfirmSenha = document.getElementById('confirm_senha');
 const inputEmail = document.getElementById('email');
 const inputTermos = document.getElementById('termos');
 
@@ -215,11 +215,11 @@ if (!registerForm || !inputCPF || !inputNome || !inputSenha || !inputConfirmSenh
 
         // Validação de Confirmar Senha
         if (inputConfirmSenha.value !== inputSenha.value || inputConfirmSenha.value === '') {
-            setError('confirmSenhaError', 'confirmSenha', 'As senhas não conferem.');
+            setError('confirmSenhaError', 'confirm_senha', 'As senhas não conferem.');
             setInputState(inputConfirmSenha, false);
             valid = false;
         } else {
-            setError('confirmSenhaError', 'confirmSenha', '');
+            setError('confirmSenhaError', 'confirm_senha', '');
             setInputState(inputConfirmSenha, true);
         }
 

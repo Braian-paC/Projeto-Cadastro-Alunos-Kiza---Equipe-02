@@ -19,34 +19,42 @@
           <p>Crie sua conta para acessar o portal.</p>
         </div>
         
-        <form method="POST" action="cadastrar.php">
+        <form method="POST" action="cadastrar.php" id="registerForm">
 
           <label class="cadastro">
-            <input name="nome" type="text" required placeholder="Nome completo" />
+            <input name="nome" type="text" id="nome" required placeholder="Nome completo" />
+            <span id="nomeError" ></span>
           </label>
         
           <label class="cadastro">
-            <input name="cpf" type="text" required placeholder="CPF"/>
+            <input name="cpf" type="text" id="cpf" required placeholder="CPF"/>
+            <span id="cpfError"></span>
           </label>
 
           <label class="cadastro">
-            <input name="senha" type="password" required placeholder="Senha" />
+            <input name="senha" type="password" id="senha" required placeholder="Senha" />
+            <span id="senhaError"></span>
           </label>
 
           <label class="cadastro">
-            <input name="confirm_senha" type="password" required placeholder="Confirmar senha" />
+            <input name="confirm_senha" type="password" id="confirm_senha" required placeholder="Confirmar senha" />
+            <span id="confirmSenhaError"></span>
           </label>
 
           <label class="cadastro">
-            <input name="email" type="email" required placeholder="Email" />
+            <input name="email" type="email" id="email" required placeholder="Email" />
+            <span id="emailError"></span>
           </label>
 
           <button class="registro" type="submit">Registrar</button>
 
           <label class="check">
-            <input type="checkbox" name="termos" required />
+            <input type="checkbox" id="termos" name="termos" required />
             Eu aceito os <a href="termos.php">termos de uso</a>
           </label>
+          <div>
+            <span id="termosError"></span>
+          </div>
 
         </form>
 
@@ -63,6 +71,6 @@
     <h1>Portal Acadêmico</h1>
     <img src="../assets/images/image-1-16.png" alt="Ilustração" />
   </div>
-
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
