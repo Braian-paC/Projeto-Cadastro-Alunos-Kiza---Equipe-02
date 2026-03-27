@@ -237,8 +237,7 @@ if (!registerForm || !inputCPF || !inputNome || !inputSenha || !inputConfirmSenh
                 senha: '[PROTEGIDO]'
             });
             alert('Cadastro realizado com sucesso!');
-            registerForm.reset();
-            clearAllStates();
+            registerForm.submit();
         } else {
             console.warn('❌ Formulário contém erros. Corrija antes de enviar.');
         }

@@ -16,9 +16,11 @@ if ($senha != $confirm_senha) {
     exit();
 }
 
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
 // INSERT no banco
-$sql = "INSERT INTO alunos (nome, cpf, email, senha, confirm_senha)
-VALUES ('$nome', '$cpf', '$email', '$senha', '$senha')";
+$sql = "INSERT INTO alunos (nome, cpf, email, senha)
+VALUES ('$nome', '$cpf', '$email', '$senha_hash')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: Index.php");

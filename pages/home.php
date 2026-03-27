@@ -35,12 +35,9 @@ if (!isset($_SESSION['usuario'])) {
     <h1>Portal Acadêmico | Bem-vindo</h1>
 
     <?php
-    $conn = new mysqli("localhost", "root", "", "escola");
-
-    if ($conn->connect_error) {
-        die("Erro de conexão: " . $conn->connect_error);
-    }
-
+      // Conexão ao Banco de Dados.
+      include("../config/database.php"); 
+         
     // 🔽 MOSTRA LISTA SOMENTE QUANDO CLICAR NO 👥
     if (isset($_GET['lista']) && $_GET['lista'] == 'alunos') {
 
