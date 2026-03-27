@@ -17,12 +17,15 @@ if ($result->num_rows > 0) {
     // 🔽 VERIFICA SENHA CRIPTOGRAFADA
     if (password_verify($senha, $usuario['senha'])) {
         $_SESSION['usuario'] = $email;
-        header("Location: home.php");
+        header('Content-Type: application/json');
+        echo json_encode(['success' => true]);
         exit();
     } else {
-        echo "Senha incorreta";
-    }
+        header('Content-Type: application/json');
+        echo json_encode(['success' => false, 'message' => 'Senha incorreta']); //Converte um array php em uma string no formato JSON
+    }                                                                           //Fiz isso pq antes estava abrindo uma pagina em branco, agora posso fazer um interacao com o JS 
 } else {
-    echo "Usuário não encontrado";
+        header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Usuário não encontrado']);
 }
 ?>

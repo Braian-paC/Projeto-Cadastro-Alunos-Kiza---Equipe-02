@@ -18,7 +18,7 @@
         <div class="left">
 
           
-          <form method="POST" action="login.php">
+          <form method="POST" action="login.php" id="formLogin">
 
             <label for="email">Email</label>
             <input
@@ -37,6 +37,7 @@
               placeholder="Senha"
               required
             />
+            <span id="erro-senha" style="color: red; font-size: 12px;"></span>
 
             <button type="submit">Entrar</button>
 
@@ -59,5 +60,6 @@
 
       </div>
     </main>
+    <script src="../assets/js/login.js"></script>
   </body>
 </html>
