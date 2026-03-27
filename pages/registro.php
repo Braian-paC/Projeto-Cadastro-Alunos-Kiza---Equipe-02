@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro - Portal Academico</title>
   <link rel="stylesheet" href="../assets/css/registro.css" />
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 
 <body>
@@ -27,7 +29,7 @@
           </label>
         
           <label class="cadastro">
-            <input name="cpf" type="text" id="cpf" required placeholder="CPF"/>
+            <input name="cpf" type="text" id="cpf" maxlength="14" required placeholder="CPF"/>
             <span id="cpfError"></span>
           </label>
 
