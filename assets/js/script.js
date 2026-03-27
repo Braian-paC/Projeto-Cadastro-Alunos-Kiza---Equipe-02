@@ -252,3 +252,28 @@ if (!registerForm || !inputCPF || !inputNome || !inputSenha || !inputConfirmSenh
         }
     });
 }
+
+//Modal dos termos
+const modalTermos = document.getElementById('modalTermos');
+const abrirTermos = document.getElementById('abrirTermos');
+const fecharTermos = document.getElementById('fecharModalTermos');
+
+if (abrirTermos) {
+    abrirTermos.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalTermos.style.display= 'flex';
+    });
+};
+
+if (fecharTermos) {
+    fecharTermos.addEventListener('click', () =>{
+        modalTermos.style.display = 'none';
+    });
+};
+
+//Fechar modal ao vlicar fora do conteudo
+window.addEventListener('click', (e) => {
+    if (e.target === modalTermos) {
+        modalTermos.style.display = 'none';
+    }
+});
