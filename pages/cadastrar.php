@@ -5,7 +5,7 @@ include("../config/database.php");
 
 // Pega os dados
 $nome = $_POST['nome'];
-$cpf = $_POST['cpf'];
+$cpf = preg_replace('/\D/', '', $_POST['cpf']); //Agora ele pega o cpf e tira as pontuações para poder economizar espaço na memória!
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $confirm_senha = $_POST['confirm_senha'];

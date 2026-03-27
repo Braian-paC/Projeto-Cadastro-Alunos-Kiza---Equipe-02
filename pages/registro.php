@@ -11,7 +11,38 @@
 </head>
 
 <body>
+<!-- Modal de termos de uso -->
+ <div id="modalTermos" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: 
+  center; align-items: center; z-index: 9999; ">
+  <div style="background: white; padding: 20px; border-radius: 8px; max-width: 500px; max-height: 80%; overflow-y: auto; color: black;">
+    <h1 style="font-size: 1.5rem;">Termos de uso</h1>
+    <p>Este é um exemplo de termo de uso para o portal acadêmico.</p>
 
+        <p><strong>1.</strong> Você concorda em usar o portal apenas para fins educacionais e respeitar as regras da instituição.</p>
+
+        <p><strong>2.</strong> Sua matrícula e senha são pessoais; não compartilhe com terceiros.</p>
+
+        <p><strong>3.</strong> Todos os dados devem ser utilizados de forma ética e segura.</p>
+
+        <p><strong>4.</strong> A instituição pode monitorar acessos e uso para garantir segurança.</p>
+
+        <p><strong>5.</strong> Ao prosseguir, você aceita esses termos.</p>
+        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;"><button id="fecharModalTermos" style="padding: 8px 16px; background: #4CAF50;
+         color: white; border: none; border-radius: 4px; cursor: pointer;">Fechar</button>
+         </div>
+  </div>
+</div>
+
+<!-- Modal de conseguir registrar -->
+ <div id="modalSucesso" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
+ justify-content: center; align-items: center; z-index: 9999;">
+ <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; max-width: 300px; color: black;">
+  <h3>✅ Cadastro realizado!</h3>
+  <p>Seu cadastro foi concluído com sucesso.</p>
+  <button id="fecharModal" style="margin-top: 10px; padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 4px;">OK</button>
+ </div>
+</div>
+ 
   <main>
     <div class="main">
 
@@ -52,7 +83,7 @@
 
           <label class="check">
             <input type="checkbox" id="termos" name="termos" required />
-            Eu aceito os <a href="termos.php">termos de uso</a>
+            Eu aceito os <a href="javascript:void(0);" id="abrirTermos">termos de uso</a>
           </label>
           <div>
             <span id="termosError"></span>

@@ -236,10 +236,44 @@ if (!registerForm || !inputCPF || !inputNome || !inputSenha || !inputConfirmSenh
                 email: inputEmail.value,
                 senha: '[PROTEGIDO]'
             });
-            alert('Cadastro realizado com sucesso!');
-            registerForm.submit();
+
+            //Mostra o modal que eu fiz no registro.php
+            const modal = document.getElementById('modalSucesso');
+            modal.style.display = 'flex';
+            
+            //Quando o botao de OK for clicado envia o formulario para o php
+            const btnFechar = document.getElementById('fecharModal');
+            btnFechar.onclick = () => {
+                modal.style.display = 'none';
+                registerForm.submit(); //ENvio de formulario
+            }
         } else {
             console.warn('❌ Formulário contém erros. Corrija antes de enviar.');
         }
     });
 }
+
+//Modal dos termos
+const modalTermos = document.getElementById('modalTermos');
+const abrirTermos = document.getElementById('abrirTermos');
+const fecharTermos = document.getElementById('fecharModalTermos');
+
+if (abrirTermos) {
+    abrirTermos.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalTermos.style.display= 'flex';
+    });
+};
+
+if (fecharTermos) {
+    fecharTermos.addEventListener('click', () =>{
+        modalTermos.style.display = 'none';
+    });
+};
+
+//Fechar modal ao vlicar fora do conteudo
+window.addEventListener('click', (e) => {
+    if (e.target === modalTermos) {
+        modalTermos.style.display = 'none';
+    }
+});

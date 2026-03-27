@@ -22,10 +22,10 @@ if ($result->num_rows > 0) {
         exit();
     } else {
         header('Content-Type: application/json');
-        echo json_encode(['success' => false, 'message' => 'Senha incorreta']); //Converte um array php em uma string no formato JSON
+        echo json_encode(['success' => false, 'message' => 'Credenciais invalidas']); //Converte um array php em uma string no formato JSON
     }                                                                           //Fiz isso pq antes estava abrindo uma pagina em branco, agora posso fazer um interacao com o JS 
 } else {
         header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'message' => 'Usuário não encontrado']);
+    echo json_encode(['success' => false, 'message' => 'Credenciais invalidas']);
 }
 ?>
