@@ -1,10 +1,12 @@
 const formulario = document.getElementById('formLogin')
-const spanErro = document.getElementById('erro-senha')
+const spanSenhaErro = document.getElementById('erro-senha')
+const spanEmailErro = document.getElementById('email-error')
 
 formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    spanErro.innerText = "";
+    spanSenhaErro.innerText = "";
+    spanEmailErro.innerText = "";
 
     const dados = new FormData(formulario);
 
@@ -18,7 +20,6 @@ formulario.addEventListener('submit', async (e) => {
     if(resultado.success) {
         window.location.href = 'home.php';
     } else {
-        spanErro.innerText = resultado.message;
+            spanSenhaErro.innerText = resultado.message;
     };
-
 });
