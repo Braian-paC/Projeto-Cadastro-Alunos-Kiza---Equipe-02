@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Portal Academico</title>
+    <title>Login - Portal Acadêmico</title>
     <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <header>
-      <strong>Portal Academico</strong>
+      <strong>Portal Acadêmico</strong>
       <h1>Bem-vindo</h1>
       <p>Faca login para acessar sua plataforma de estudos.</p>
     </header>
@@ -16,7 +16,6 @@
     <main>
       <div class="main">
         <div class="left">
-
           
           <form method="POST" action="login.php" id="formLogin">
 
