@@ -11,7 +11,16 @@
 </head>
 
 <body>
-
+<!-- Modal de conseguir registrar -->
+ <div id="modalSucesso" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
+ justify-content: center; align-items: center; z-index: 9999;">
+ <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; max-width: 300px; color: black;">
+  <h3>✅ Cadastro realizado!</h3>
+  <p>Seu cadastro foi concluído com sucesso.</p>
+  <button id="fecharModal" style="margin-top: 10px; padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 4px;">OK</button>
+ </div>
+</div>
+ 
   <main>
     <div class="main">
 
