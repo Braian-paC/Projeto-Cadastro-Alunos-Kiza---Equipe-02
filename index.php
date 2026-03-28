@@ -1,4 +1,4 @@
-<!-- Arquivo para iniciar o servidor PHP. -!>
+clear<!-- Arquivo para iniciar o servidor PHP. -!>
 
 <?php
 // O servidor inicia e vai para a página "pages/home.php"

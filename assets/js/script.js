@@ -243,10 +243,19 @@ if (!registerForm || !inputCPF || !inputNome || !inputSenha || !inputConfirmSenh
             
             //Quando o botao de OK for clicado envia o formulario para o php
             const btnFechar = document.getElementById('fecharModal');
-            btnFechar.onclick = () => {
-                modal.style.display = 'none';
-                registerForm.submit(); //ENvio de formulario
+            if (btnFechar) {
+                btnFechar.onclick = () => {
+                    modal.style.display = 'none';
+                    registerForm.submit(); //Envio de formulario
+                };
             }
+            //Fecha o modal se clicar fora do conteudo
+            window.addEventListener('click', (e) => {
+                if (e.target == modal) {
+                    modal.style.display = 'none';
+                    registerForm.submit();
+                };
+            });
         } else {
             console.warn('❌ Formulário contém erros. Corrija antes de enviar.');
         }
