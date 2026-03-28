@@ -27,7 +27,6 @@
               placeholder="Digite seu email"
               required
             />
-            <span id="email-error" style="color: red; font size: 10px;"></span>
 
             <label for="senha">Senha</label>
             <input
