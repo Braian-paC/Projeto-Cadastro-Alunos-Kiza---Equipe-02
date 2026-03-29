@@ -52,7 +52,7 @@
           <p>Crie sua conta para acessar o portal.</p>
         </div>
         
-        <form method="POST" action="cadastrar.php" id="registerForm">
+        <form method="POST" action="/../services/cadastrar.php" id="registerForm">
 
           <label class="cadastro">
             <input name="nome" type="text" id="nome" required placeholder="Nome completo" />
@@ -91,7 +91,7 @@
 
         </form>
 
-        <button onclick="location.href='Index.php'">
+        <button onclick="location.href='login.php'">
           Voltar ao login
         </button>
 

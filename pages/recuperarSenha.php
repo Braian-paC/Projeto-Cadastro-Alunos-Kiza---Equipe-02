@@ -29,7 +29,7 @@
 
         </form>
 
-        <button type="button" onclick="location.href='Index.php'">
+        <button type="button" onclick="location.href='login.php'">
           Voltar ao login
         </button>
 

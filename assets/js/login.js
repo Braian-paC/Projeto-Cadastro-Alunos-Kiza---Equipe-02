@@ -10,13 +10,14 @@ formulario.addEventListener('submit', async (e) => {
 
     const dados = new FormData(formulario);
 
-    const resposta = await fetch('login.php', {
+    const resposta = await fetch('../services/loginService.php', {
         method: 'POST',
         body: dados
     });
 
     const resultado = await resposta.json();
     console.log(resultado);
+    console.log();
 
     if(resultado.success) {
         window.location.href = '../../pages/home.php';

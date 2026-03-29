@@ -17,7 +17,7 @@
       <div class="main">
         <div class="left">
           
-          <form method="POST" action="login.php" id="formLogin">
+          <form method="POST" action="/../services/loginService.php" id="formLogin">
 
             <label for="email">Email</label>
             <input

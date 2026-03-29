@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['usuario'])) {
-    header("Location: Index.php");
+    header("Location: login.php");
     exit();
 }
 ?>
@@ -75,7 +75,7 @@ if (!isset($_SESSION['usuario'])) {
   <aside class="sidebar">
     <a href="home.php" class="icon">🏠</a>
     <a href="home.php?lista=alunos" class="icon">👥</a>
-    <a href="Index.php" class="icon">🚪</a>
+    <a href="login.php" class="icon">🚪</a>
   </aside>
 
   <!-- CONTEÚDO -->

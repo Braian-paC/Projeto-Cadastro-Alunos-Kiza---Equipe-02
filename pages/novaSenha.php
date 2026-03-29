@@ -20,7 +20,7 @@
     <div class="right">
 
       <section>
-        <form action="Index.php" method="post">
+        <form action="login.php" method="post">
 
           <label for="new-password">Nova senha</label>
           <input
@@ -45,7 +45,7 @@
         </form>
       </section>
 
-      <button type="button" onclick="location.href='Index.php'">
+      <button type="button" onclick="location.href='login.php'">
         Voltar ao login
       </button>
 
