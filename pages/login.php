@@ -10,7 +10,7 @@
     <header>
       <strong>Portal Acadêmico</strong>
       <h1>Bem-vindo</h1>
-      <p>Faca login para acessar sua plataforma de estudos.</p>
+      <p>Faça login para acessar sua plataforma de estudos.</p>
     </header>
 
     <main>
