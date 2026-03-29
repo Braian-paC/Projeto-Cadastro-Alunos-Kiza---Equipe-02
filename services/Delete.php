@@ -1,9 +1,9 @@
 <?php
 // 1. Conecta ao banco (subindo duas pastas para achar a 'config')
-require_once '../../config/database.php';
+require_once '../config/database.php';
 
 // 2. Importa a lógica do serviço (está na mesma pasta)
-require_once 'AlunoService.php';
+require_once 'alunoService.php';
 
 // 3. Inicia o serviço passando a conexão $conn que vem do database.php
 $alunoService = new AlunoService($conn);
@@ -18,9 +18,9 @@ if ($idParaDeletar) {
     $_SESSION['mensagem'] = $resultado['mensagem'];
 
     // Redireciona automaticamente para a Home (subindo uma pasta)
-    header("Location: ../home.php");
+    header("Location: ../pages/home.php");
     exit;
 } else {
-    header("Location: ../home.php");
+    header("Location: ../pages/home.php");
     exit;
 }

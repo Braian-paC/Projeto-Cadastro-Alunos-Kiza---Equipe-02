@@ -130,7 +130,7 @@ if (!isset($_SESSION['usuario'])) {
                     <p><strong>CPF:</strong> $cpf</p>
                     <p><strong>Email:</strong> $email</p>
                     <p><strong>Curso:</strong> $curso</p>
-                    <a href='editar.php?id={$aluno['id']}'>Editar</a>
+                    <a href='/../services/editar.php?id={$aluno['id']}'>Editar</a>
                   </div>";
               }
           } else {

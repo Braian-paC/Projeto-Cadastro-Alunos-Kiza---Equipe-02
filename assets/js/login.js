@@ -16,9 +16,10 @@ formulario.addEventListener('submit', async (e) => {
     });
 
     const resultado = await resposta.json();
+    console.log(resultado);
 
     if(resultado.success) {
-        window.location.href = 'home.php';
+        window.location.href = '../../pages/home.php';
     } else {
             spanSenhaErro.innerText = resultado.message;
     };

@@ -19,7 +19,7 @@
 
     <main>
         <div class="right">
-            <form action="nova-senha.php" method="post">
+            <form action="novaSenha.php" method="post">
 
                 <label>Codigo</label>
                 <input 

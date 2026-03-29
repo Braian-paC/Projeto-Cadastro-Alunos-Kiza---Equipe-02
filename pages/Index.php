@@ -27,6 +27,7 @@
               placeholder="Digite seu email"
               required
             />
+            <span id="email-error" style="color: red; font-size: 12px;"></span>
 
             <label for="senha">Senha</label>
             <input
@@ -43,7 +44,7 @@
           </form>
 
           <div class="footer-links">
-            <a href="recuperar-senha.php">Esqueci a senha</a>
+            <a href="recuperarSenha.php">Esqueci a senha</a>
             <a href="registro.php">Criar conta</a>
           </div>
 

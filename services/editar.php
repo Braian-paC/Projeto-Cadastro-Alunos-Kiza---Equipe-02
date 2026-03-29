@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <button type="submit">Atualizar</button><br><br>
 
-    <a href="Delete/Delete.php?id=<?php echo $aluno['id']; ?>" onclick="return confirm('Deseja realmente excluir?');"
+    <a href="delete.php?id=<?php echo $aluno['id']; ?>" onclick="return confirm('Deseja realmente excluir?');"
         style="background-color: #ff4d4d; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px;">
         Excluir
     </a>
