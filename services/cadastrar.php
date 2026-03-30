@@ -23,7 +23,7 @@ $sql = "INSERT INTO alunos (nome, cpf, email, senha)
 VALUES ('$nome', '$cpf', '$email', '$senha_hash')";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: /../pages/login.php");
+    header("Location: ../pages/login.php");
     exit();
 } else {
     echo "Erro: " . $conn->error;

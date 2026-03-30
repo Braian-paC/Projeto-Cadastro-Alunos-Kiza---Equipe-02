@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro - Portal Academico</title>
   <link rel="stylesheet" href="../assets/css/registro.css" />
-  <link rel="stylesheet" href="../assets/css/layout.css">
-  <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 
 <body>
@@ -52,7 +50,7 @@
           <p>Crie sua conta para acessar o portal.</p>
         </div>
         
-        <form method="POST" action="/../services/cadastrar.php" id="registerForm">
+        <form method="POST" action="../services/cadastrar.php" id="registerForm">
 
           <label class="cadastro">
             <input name="nome" type="text" id="nome" required placeholder="Nome completo" />
