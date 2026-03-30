@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario'])) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal Acadêmico</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../assets/css/home.css" />
   <style>
     .busca-form {
       display: flex;
@@ -71,16 +71,17 @@ if (!isset($_SESSION['usuario'])) {
 <body>
 <div class="dashboard">
 
-  <!-- MENU LATERAL -->
-  <aside class="sidebar">
-    <a href="home.php" class="icon">🏠</a>
-    <a href="home.php?lista=alunos" class="icon">👥</a>
-    <a href="login.php" class="icon">🚪</a>
-  </aside>
+  <h1>Portal Acadêmico | Bem-vindo</h1>
 
   <!-- CONTEÚDO -->
   <main class="content">
-    <h1>Portal Acadêmico | Bem-vindo</h1>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+      <a href="home.php" class="icon">🏠</a>
+      <a href="home.php?lista=alunos" class="icon">👥</a>
+      <a href="login.php" class="icon">🚪</a>
+    </aside>
 
     <?php
       include("../config/database.php");
@@ -136,9 +137,6 @@ if (!isset($_SESSION['usuario'])) {
           } else {
               echo "<p class='sem-resultado'>Nenhum aluno encontrado para \"" . htmlspecialchars($q) . "\".</p>";
           }
-
-      } else {
-          echo "<h2>Bem-vindo ao sistema</h2>";
       }
     ?>
 
