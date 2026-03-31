@@ -20,25 +20,25 @@
     <div class="right">
 
       <section>
-        <form action="login.php" method="post">
+        <form method="post"  id="formNovaSenha">
 
-          <label for="new-password">Nova senha</label>
+          <label for="senha">Nova senha</label>
           <input
-            id="new-password"
-            name="new-password"
+            id="senha"
+            name="senha"
             type="password"
             required
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$"
           />
+          <span id="senhaError" style="color: red; font-size: 12px;"></span>
 
-          <label for="confirm-password">Confirmar senha</label>
+          <label for="confirmarSenha">Confirmar senha</label>
           <input
-            id="confirm-password"
-            name="confirm-password"
+            id="confirmarSenha"
+            name="confirmarSenha"
             type="password"
             required
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$"
           />
+          <span id="confirmarError" style="color: red; font-size: 12px;"></span>
 
           <button type="submit">Salvar e voltar</button>
 
@@ -51,6 +51,6 @@
 
     </div>
   </main>
-
+<script src="../assets/js/nova-senha.js"></script>
 </body>
 </html>

@@ -45,7 +45,7 @@ const validateCPF = (cpf) => {
     const cpfCorreto = cpf.substring(0, 9) + primeiroDigito + segundoDigito; //Monta como realmente deveria ser o cpf
     
     if (cpf !== cpfCorreto) { 
-        return { valid: false, message: 'CPF inválido. Dígitos verificadores incorretos.' };
+        return { valid: false, message: 'CPF inválido!' };
     }
     
     return { valid: true, message: 'CPF válido!' };
