@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-image: url('../images/gumball-darwin-1-76.png');
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 30px 30px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+}
+
+.sidebar {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 100px;
+    min-height: 300px;
+    gap: 20px;
+    background: #ffffff67;
+    border-radius: 20px;
+}
+
+.icon {
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    width: 900px;
+    min-height: 500px;
+    gap: 20px;
+    overflow: hidden;
+    margin: 10px auto;
+    background: #ffffff67;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.card span {
+    font-size: 80px;
+}
