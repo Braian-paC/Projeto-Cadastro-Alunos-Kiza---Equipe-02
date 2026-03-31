@@ -93,17 +93,6 @@ label {
   grid-template-columns: 420px 1fr;
   margin-right: 20px;
 }
-
-@media (max-width: 760px) {
-  .main {
-    display: block;
-  }
-
-  .right {
-    border-top: 1px solid #dfe3ef;
-    grid-template-columns: 420px 1fr;
-  }
-}
 .footer-links {
   justify-content: space-between;
   margin-top: 10px;
@@ -216,4 +205,17 @@ label {
   height: 30%;
   background: #c8cfdf;
   border-radius: 20%;
+}
+
+@media (max-width: 760px) {
+  .main {
+    display: block;
+  }
+
+  .right {
+    border-top: 1px solid #dfe3ef;
+    grid-template-columns: 420px 1fr;
+    margin: 0px 20px 20px 20px;
+    border-radius: 12px;
+  }
 }
