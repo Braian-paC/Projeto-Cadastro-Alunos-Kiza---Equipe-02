@@ -15,9 +15,8 @@ formulario.addEventListener('submit', async (e) => {
         body: dados
     });
 
-    const resultado = await resposta.json();
-    console.log(resultado);
-    console.log();
+    const texto = await resposta.text();
+    console.log(texto);
 
     if(resultado.success) {
         window.location.href = '../../pages/home.php';
