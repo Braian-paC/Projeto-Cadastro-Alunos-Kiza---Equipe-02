@@ -4,6 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+getenv(...) ?: 'valor';
+
 $hostname = getenv('DB_HOST') ?: 'crossover.proxy.rlwy.net';
 $bancodedados = getenv('DB_NAME') ?: 'railway';
 $usuario = getenv('DB_USER') ?: 'root';
