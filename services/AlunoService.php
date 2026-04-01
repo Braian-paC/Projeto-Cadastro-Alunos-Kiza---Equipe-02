@@ -3,6 +3,13 @@ require '../config/database.php';
 # Classe responsável por gerenciar as operações de dados dos alunos. Isolamos a lógica de banco de dados aqui para manter o código organizado e facilitar a manutenção futura.
 class AlunoService
 {
+    private $conn;
+
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
     # Remove um aluno do banco de dados de forma segura. @param int|string $id O identificador único do aluno. @return array Retorna um array com o status ('sucesso') e a 'mensagem' do resultado.
     public function deletarAluno($id)
     {
@@ -13,7 +20,7 @@ class AlunoService
 
         try {
             # 2. Prepared Statement: Evita SQL Injection usando o marcador '?'
-            $stmt = $this->db->prepare("DELETE FROM alunos WHERE id = ?");
+            $stmt = $this->conn->prepare("DELETE FROM alunos WHERE id = ?");
 
             # 3. Bind: Vincula o ID à consulta. O "i" indica que o valor é um Inteiro (integer)
             $stmt->bind_param("i", $id);
