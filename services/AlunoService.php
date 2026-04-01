@@ -1,15 +1,8 @@
 <?php
+require '../config/database.php';
 # Classe responsável por gerenciar as operações de dados dos alunos. Isolamos a lógica de banco de dados aqui para manter o código organizado e facilitar a manutenção futura.
 class AlunoService
 {
-    # @var mysqli Variável que armazena a conexão com o banco de dados 
-    private $db;
-    # Construtor da classe. Recebe a conexão vinda do database.php e a prepara para uso interno. @param mysqli $conexao Instância de conexão com o banco de dados.
-    public function __construct($conexao)
-    {
-        $this->db = $conexao;
-    }
-
     # Remove um aluno do banco de dados de forma segura. @param int|string $id O identificador único do aluno. @return array Retorna um array com o status ('sucesso') e a 'mensagem' do resultado.
     public function deletarAluno($id)
     {
