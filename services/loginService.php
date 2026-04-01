@@ -1,8 +1,12 @@
 <?php
 session_start();
 
+// Para ver o erro que está acontecendo.
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // Conexão ao Banco de Dados.
-include("../config/database.php");
+include __DIR__ . "/../config/database.php";
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];

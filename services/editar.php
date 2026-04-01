@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 session_start();
 
 // Conexão ao Banco de Dados.
-include("../config/database.php");
+include __DIR__ . "/../config/database.php";
 
 // Verifica ID
 if (!isset($_GET['id'])) {

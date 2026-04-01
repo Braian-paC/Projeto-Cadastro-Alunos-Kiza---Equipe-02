@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config/database.php');
+include __DIR__ . "/../config/database.php";
 
 $senha = $_POST['senha'] ?? '';
 header('Content-Type: application/json');

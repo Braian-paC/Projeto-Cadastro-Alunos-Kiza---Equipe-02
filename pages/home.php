@@ -84,7 +84,7 @@ if (!isset($_SESSION['usuario'])) {
     </aside>
 
     <?php
-      include("../config/database.php");
+      include __DIR__ . "/../config/database.php";
 
       if (isset($_GET['lista']) && $_GET['lista'] == 'alunos') {
 

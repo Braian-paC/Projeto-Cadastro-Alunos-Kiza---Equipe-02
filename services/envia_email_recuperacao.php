@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-include('../config/database.php'); //Conexao com banco 
+include __DIR__ . "/../config/database.php";
 
 //Recebe email do formulario JS
 $email = $_POST['email'] ?? '';

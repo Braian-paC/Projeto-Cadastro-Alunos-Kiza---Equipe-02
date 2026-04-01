@@ -11,7 +11,7 @@
     session_start();
 
     // Conexão ao Banco de Dados.
-    include("../config/database.php");
+    include __DIR__ . "/../config/database.php";
 
     // 🔽 SÓ MOSTRA SE CLICAR NO 👥
     

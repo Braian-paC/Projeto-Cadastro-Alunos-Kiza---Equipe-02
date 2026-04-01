@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config/database.php');
+include __DIR__ . "/../config/database.php";
 
 $codigo = $_POST['codigo'] ?? ''; //Recebe o codigo, se ele n existir retorna uma str vazia
 header('Content-Type: application/json');

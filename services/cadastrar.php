@@ -1,7 +1,7 @@
 <?php
 
 // Conexão ao Banco de Dados.
-include("../config/database.php");
+include __DIR__ . "/../config/database.php";
 
 // Pega os dados
 $nome = $_POST['nome'];
