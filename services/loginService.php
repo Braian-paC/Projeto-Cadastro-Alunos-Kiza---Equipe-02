@@ -8,28 +8,44 @@ error_reporting(E_ALL);
 // Conexão ao Banco de Dados.
 include __DIR__ . "/../config/database.php";
 
-$email = $_POST['email'];
+// VALIDAÇÃO: campos vazios
+if (empty($_POST['email']) || empty($_POST['senha'])) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'Preencha todos os campos.']);
+    exit();
+}
+
+// VALIDAÇÃO: formato do email
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'E-mail inválido.']);
+    exit();
+}
+
+// VALIDAÇÃO: tamanho mínimo da senha
+if (strlen($_POST['senha']) < 6) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => false, 'message' => 'A senha deve ter pelo menos 6 caracteres.']);
+    exit();
+}
+
+$email = $conn->real_escape_string($_POST['email']);
 $senha = $_POST['senha'];
 
-// Busca apenas pelo email
-$sql = "SELECT * FROM alunos WHERE email='$email'";
+$sql    = "SELECT * FROM alunos WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $usuario = $result->fetch_assoc();
-
-    // 🔽 VERIFICA SENHA CRIPTOGRAFADA
     if (password_verify($senha, $usuario['senha'])) {
         $_SESSION['usuario'] = $email;
         header('Content-Type: application/json');
         echo json_encode(['success' => true]);
         exit();
-    } else {
-        header('Content-Type: application/json');
-        echo json_encode(['success' => false, 'message' => 'Credenciais invalidas']); //Converte um array php em uma string no formato JSON
-    }                                                                           //Fiz isso pq antes estava abrindo uma pagina em branco, agora posso fazer um interacao com o JS 
-} else {
-        header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'message' => 'Credenciais invalidas']);
+    }
 }
+
+header('Content-Type: application/json');
+echo json_encode(['success' => false, 'message' => 'E-mail ou senha incorretos.']);
+exit();
 ?>
