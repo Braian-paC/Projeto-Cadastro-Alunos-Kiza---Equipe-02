@@ -15,13 +15,26 @@ formulario.addEventListener('submit', async (e) => {
         body: dados
     });
 
-    const resultado = await resposta.json();
     const texto = await resposta.text();
-    console.log(texto);
+    console.log('Resposta bruta:', resposta.status, resposta.headers.get('content-type'), texto);
 
-    if(resultado.success) {
+    let resultado;
+    try {
+        resultado = JSON.parse(texto);
+    } catch (err) {
+        spanSenhaErro.innerText = 'Erro no servidor: resposta inválida.';
+        console.error('Falha ao parsear JSON:', err, texto);
+        return;
+    }
+
+    if (!resposta.ok) {
+        spanSenhaErro.innerText = resultado.message || 'Erro HTTP ' + resposta.status;
+        return;
+    }
+
+    if (resultado.success) {
         window.location.href = '../../pages/home.php';
     } else {
-            spanSenhaErro.innerText = resultado.message;
+        spanSenhaErro.innerText = resultado.message;
     };
 });
