@@ -22,7 +22,4 @@ if ($conn->connect_error) {
 
 $conn->set_charset('utf8mb4');
 
-if (isset($_SESSION['mensagem'])) {
-    echo "<p style='color:green;'>" . $_SESSION['mensagem'] . "</p>";
-    unset($_SESSION['mensagem']);
-}
+

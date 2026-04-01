@@ -1,52 +1,58 @@
 <?php
 session_start();
 
-// Para ver o erro que está acontecendo.
+// Forçar JSON em todas as saídas.
+header('Content-Type: application/json; charset=UTF-8');
+
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
-ini_set('error_log', __DIR__.'/../logs/php-error.log');
+ini_set('error_log', sys_get_temp_dir().'/php-error.log');
 
-// Conexão ao Banco de Dados.
-include __DIR__ . "/../config/database.php";
+try {
+    include __DIR__ . "/../config/database.php";
+} catch (Throwable $e) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Erro interno de conexão ao banco.', 'debug' => $e->getMessage()]);
+    exit();
+}
 
-// VALIDAÇÃO: campos vazios
+function json_fail($message, $status = 400) {
+    http_response_code($status);
+    echo json_encode(['success' => false, 'message' => $message]);
+    exit();
+}
+
 if (empty($_POST['email']) || empty($_POST['senha'])) {
-    header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'message' => 'Preencha todos os campos.']);
-    exit();
+    json_fail('Preencha todos os campos.', 400);
 }
 
-// VALIDAÇÃO: formato do email
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'message' => 'E-mail inválido.']);
-    exit();
+    json_fail('E-mail inválido.', 400);
 }
 
-// VALIDAÇÃO: tamanho mínimo da senha
 if (strlen($_POST['senha']) < 6) {
-    header('Content-Type: application/json');
-    echo json_encode(['success' => false, 'message' => 'A senha deve ter pelo menos 6 caracteres.']);
-    exit();
+    json_fail('A senha deve ter pelo menos 6 caracteres.', 400);
 }
 
 $email = $conn->real_escape_string($_POST['email']);
 $senha = $_POST['senha'];
 
-$sql    = "SELECT * FROM alunos WHERE email = '$email'";
-$result = $conn->query($sql);
+try {
+    $sql = "SELECT * FROM alunos WHERE email = '$email'";
+    $result = $conn->query($sql);
+} catch (Throwable $e) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Erro interno no banco de dados.', 'debug' => $e->getMessage()]);
+    exit();
+}
 
 if ($result->num_rows > 0) {
     $usuario = $result->fetch_assoc();
     if (password_verify($senha, $usuario['senha'])) {
         $_SESSION['usuario'] = $email;
-        header('Content-Type: application/json');
         echo json_encode(['success' => true]);
         exit();
     }
 }
 
-header('Content-Type: application/json');
-echo json_encode(['success' => false, 'message' => 'E-mail ou senha incorretos.']);
-exit();
-?>
+json_fail('E-mail ou senha incorretos.', 401);
