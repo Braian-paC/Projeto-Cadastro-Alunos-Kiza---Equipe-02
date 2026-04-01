@@ -10,7 +10,7 @@ formulario.addEventListener('submit', async (e) => {
 
     const dados = new FormData(formulario);
 
-    const resposta = await fetch('../services/loginService.php', {
+    const resposta = await fetch('../../services/loginService.php', {
         method: 'POST',
         body: dados
     });
