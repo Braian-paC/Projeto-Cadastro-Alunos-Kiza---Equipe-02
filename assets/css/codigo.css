@@ -109,12 +109,18 @@ label {
 }
 
 @media (max-width: 760px) {
-  .main {
+  main {
     display: block;
+  }
+
+  .left{
+    text-align: center;
   }
 
   .right {
     border-top: 1px solid #dfe3ef;
     grid-template-columns: 420px 1fr;
+    margin: 0px 20px 20px 20px;
+    border-radius: 12px;
   }
 }
