@@ -64,7 +64,7 @@ input,
 button {
   border: 1px solid #64748b;
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 50px;
   padding: 10px 14px;
   max-width: 420px;
   font-size: 14px;
