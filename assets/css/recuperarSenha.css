@@ -69,7 +69,7 @@ input,
 button {
   border: 1px solid #64748b;
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 50px;
   padding: 10px 14px;
   max-width: 420px;
   font-size: 14px;
@@ -112,12 +112,18 @@ label {
 }
 
 @media (max-width: 760px) {
-  .main {
+  .new-password {
     display: block;
+  }
+
+  .left{
+    text-align: center;
   }
 
   .right {
     border-top: 1px solid #dfe3ef;
     grid-template-columns: 420px 1fr;
+    margin: 0px 20px 20px 20px;
+    border-radius: 12px;
   }
 }
