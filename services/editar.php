@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($sql);
 
     $_SESSION['mensagem'] = "Aluno atualizado com sucesso!";
-    header("Location: ../pages/home.php?lista=alunos"); //Lembrando que quando a pagina alunos.php estiver pronta tem que trocar
+    header("Location: alunos.php"); 
     exit();
 }
 ?>
